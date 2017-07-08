@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Academy 2017: User Interface. Русинка Богдан JS-02</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/responsive.css"/>
+</head>
+<body>
+<div class="wrapper">
+    <div class="main-content">
+        <header>
+            <div class="header-container">
+                <div class="logo">
+                    <a href="#"><img src="img/logo-horizontal.png" alt=""/></a>
+                </div>
+                <div class="logo logo-mobile">
+                    <a href="#"><img src="img/logo-horizontal-mini.png" alt=""/></a>
+                </div>
+                <nav>
+                    <menu>
+                        <li><a href="#" title="">Компот</a></li>
+                        <li><a href="#" title="">Сосиски</a></li>
+                        <li><a href="#" title="">Огурцы</a></li>
+                        <li><a href="#" title="">Рубироид</a></li>
+                        <div class="search-wrapper">
+                            <input class="search" placeholder="Show me" type="text"/>
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                    </menu>
+                </nav>
+                <div class="hamburger-icon" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="display-one">
+                <aside>
+                    <ul class="aside-menu">
+                        <li><a href="#" title=""><i class="fa fa-umbrella" aria-hidden="true"></i><span>Арабская</span></a></li>
+                        <li><a href="#" title=""><i class="fa fa-ravelry" aria-hidden="true"></i><span>Нооочь</span></a></li>
+                        <li><a href="#" title=""><i class="fa fa-address-card" aria-hidden="true"></i><span>О дивный</span></a></li>
+                        <li><a href="#" title=""><i class="fa fa-anchor" aria-hidden="true"></i><span>Востооок</span></a></li>
+                    </ul>
+                </aside>
+                <article class="main-right-content">
+                    <div class="container-of-blocks">
+                        <div class="block">Det finnes mange ulike varianter av Lorem Ipsum, men majoriteten av disse har blitt tuklet med på et eller annet vis. Det være seg innlagt humoerte ord som s Ipsum-generatorer på internett har en tendens til å repetere forhåndsdefinerte</div>
+                        <div class="block">Det finnes mange ulike vam-generatorer på internett har en tendens til å repetere forhåndsdefinerte</div>
+                        <div class="block">Det finnes mange ulike varianter av Lorem Ipsum, men majoriteten av disse har blitt tuklet med på et eller annet vis. Det være seg innlagt humor eenererte ord som ser langt fra troverdige ut. Skal man bruke avsnitt av Lorem Ipsum må man være sikker på at det ikke skjuler seg noe pinlig midt i teksten. Lorem Ipsum-generatorer på internett har en tendens til å repetere forhåndsdefinerte</div>
+                        <div class="block">Det finnes mange ulike varianter av Lorem Ipsum, men majoriteten av disse har blitt tuklet med på et eller annet vis. Det være seg innlagt humor eller d som ser langt fra troverdige ut. Skal man bruke avsnitt av Lorem Ipsum må man være sikker på at det ikke skjuler seg noe pinlig midt i teksten. Lorem Ipsum-generatorer på internett har en tendens til å repetere forhåndsdefinerte</div>
+                    </div>
+                </article>
+            </section>
+            <section class="display-two"></section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="column">
+                    <ul>
+                        <li><a href="#" title="">Point 1</a></li>
+                        <li><a href="#" title="">Point 2</a></li>
+                        <li><a href="#" title="">Point 3</a></li>
+                        <li><a href="#" title="">Point 3</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        <li><a href="#" title="">Point 1</a></li>
+                        <li><a href="#" title="">Point 2</a></li>
+                        <li><a href="#" title="">Point 3</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        <li><a href="#" title="">Point 1</a></li>
+                        <li><a href="#" title="">Point 2</a></li>
+                        <li><a href="#" title="">Point 3</a></li>
+                        <li><a href="#" title="">Point 3</a></li>
+                        <li><a href="#" title="">Point 3</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        <li><a href="#" title="">Point 1</a></li>
+                        <li><a href="#" title="">Point 2</a></li>
+                        <li><a href="#" title="">Point 3</a></li>
+                        <li><a href="#" title="">Point 3</a></li>
+                        <li><a href="#" title="">Point 3</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <div>
+                        <a href="#" title="">Point 1</a>
+                        <a href="#" title="">Point 2</a>
+                        <a href="#" title="">Point 3</a>
+                    </div>
+                </div>
+                <div class="footer-bottom-right">
+                    <div class="icon-block">
+                        <span class="twitter"></span>
+                        <span class="fb"></span>
+                        <span class="google"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+    <script>
+        var hamburger = document.getElementById('hamburger');
+        var nav = document.getElementsByTagName('nav');
+
+        hamburger.addEventListener("click" , function() {
+                if (hamburger.className === "hamburger-icon") {
+                    hamburger.className += " open";
+                    nav[0].style.visibility = 'visible';
+                    nav[0].style.opacity = '1';
+
+                } else {
+                    hamburger.className = "hamburger-icon";
+                    nav[0].removeAttribute("style")
+                }
+            }
+        );
+    </script>
+</body>
+</html>
+<!-- IE needs 512+ bytes: http://blogs.msdn.com/b/ieinternals/archive/2010/08/19/http-error-pages-in-internet-explorer.aspx -->
