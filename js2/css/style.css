@@ -276,7 +276,9 @@ aside {
 }
 
 .container-of-blocks {
-    display: inline-block;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
     font-size: 0;
     padding: 10px;
 }
@@ -284,13 +286,75 @@ aside {
 .container-of-blocks .block {
     display: inline-block;
     vertical-align: top;
-    border: 1px solid #000;
+    border: 2px solid #d4d4d4;
     border-radius: 4px;
-    background: #b9fff2;
+    background: #fff;
     max-width: 200px;
     padding: 10px;
     font-size: 16px;
     margin: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.block img {
+    transition: all ease-out 0.5s;
+    max-width: 100%;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+.block div {
+    vertical-align: middle;
+    display: inline;
+}
+
+.block div:after {
+    content: "";
+    vertical-align: middle;
+    width:0;
+    height: 100%;
+    display: inline-block;
+}
+
+.block span {
+    transition: all ease-out 0.5s;
+    position: absolute;
+    bottom: 100%;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    left: 5px;
+    right: 5px;
+    padding: 4px;
+    opacity: 0;
+    overflow-y: auto;
+}
+
+.block:hover img {
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+}
+
+.block:hover span {
+    bottom: 5px;
+    opacity: 1;
 }
 
 .display-one {
