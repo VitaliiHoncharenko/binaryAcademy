@@ -68,6 +68,7 @@
         display: block;
         background: rgb(185, 255, 242);
         border-bottom: 1px solid grey;
+        border-radius: 0;
     }
 
     .search-wrapper {
