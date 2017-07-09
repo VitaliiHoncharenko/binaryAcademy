@@ -70,6 +70,31 @@ header {
     display: none;
 }
 
+
+@-webkit-keyframes logo-mobile {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@-moz-keyframes logo-mobile {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@-o-keyframes logo-mobile {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes logo-mobile {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.logo-mobile:hover {
+    -webkit-animation: logo-mobile 10s 1s infinite linear; /* Safari 4+ */
+    -moz-animation:    logo-mobile 10s 1s infinite linear; /* Fx 5+ */
+    -o-animation:      logo-mobile 10s 1s infinite linear; /* Opera 12+ */
+    animation:         logo-mobile 10s 1s infinite linear; /* IE 10+, Fx 29+ */
+}
+
 nav {
     width: 100%;
     padding: 20px 0px 20px 20px;
