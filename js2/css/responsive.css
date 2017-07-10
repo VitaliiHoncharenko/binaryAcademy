@@ -80,7 +80,7 @@
 }
 
 @media screen and (max-width:400px) {
-    body .display-one {
+    .display-one {
         padding-top: 66px;
     }
 
