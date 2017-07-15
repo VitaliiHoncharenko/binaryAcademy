@@ -34,12 +34,13 @@ var PostsDisplay = {
     },
     showPosts: function(posts){
         var limit = this.visiblePostsQty;
-
-        for(var i = limit; i < limit + this.POST_LIMIT; i++ ) {
-            this.createHTML(posts[i]);
-            this.visiblePostsQty++;
+        if(limit < this.array.length) {
+            for(var i = limit; i < limit + this.POST_LIMIT; i++ ) {
+                this.createHTML(posts[i]);
+                this.visiblePostsQty++;
+            }
+            this.onScrollEvent();
         }
-        this.onScrollEvent();
     },
     showFilterPosts: function(filterPosts) {
         this.visiblePostsQty = 0;
@@ -106,7 +107,9 @@ var PostsDisplay = {
     onScrollAction: function(){
         if ((document.documentElement.scrollTop + window.innerHeight)
             >= document.documentElement.scrollHeight) {
-            this.showPosts(this.filterArray);
+            if(this.filterArray.length > this.POST_LIMIT) {
+                this.showPosts(this.filterArray);
+            }
         }
     },
     onSearchEvent: function() {
@@ -114,24 +117,22 @@ var PostsDisplay = {
         search.addEventListener('input', this.onSearchAction.bind(this));
     },
     onSearchAction: function(event){
-            var term = event.target.value.toLowerCase();
-            var posts = document.getElementById('posts');
+        var term = event.target.value.toLowerCase();
+        var posts = document.getElementById('posts');
 
-            this.filterArray = [];
-            posts.innerHTML = '';
+        this.filterArray = [];
+        posts.innerHTML = '';
 
-            var _this = this;
-            _this.filterArray= _this.array.filter(function(post) {
-                var title = post.title.toLowerCase();
+        var _this = this;
+        _this.filterArray= _this.array.filter(function(post) {
+            var title = post.title.toLowerCase();
 
-                if ( title.indexOf(term) > -1) {
-                    console.log(post);
-                    return post;
-                }
-            });
+            if ( title.indexOf(term) > -1) {
+                return post;
+            }
+        });
 
-            this.showFilterPosts(this.filterArray);
-        console.log(event.target.value)
+        this.showFilterPosts(this.filterArray);
     },
     onTagClickEvent: function() {
         var tagCollection = document.getElementsByClassName('click-tag');
@@ -142,34 +143,33 @@ var PostsDisplay = {
     onTagClickAction: function(event){
         var tagText = event.target.innerHTML.toLowerCase();
         var posts = document.getElementById('posts');
-        debugger;
-        this.clickedTags.push(tagText);
-
+        var _this = this;
+        if(event.target.className == "click-tag") {
+            event.target.classList += ' active';
+            this.clickedTags.push(tagText);
+        } else {
+            event.target.className = "click-tag";
+            _this.clickedTags = _this.clickedTags.filter(function(tag){
+                return tag != tagText;
+            })
+        }
 
         this.filterArray = [];
         posts.innerHTML = '';
 
-        console.log(event.target.innerHTML);
-
-        var _this = this;
         _this.filterArray= _this.array.filter(function(post) {
             var tags = post.tags;
-            var isMatch = false;
+            var isMatchQty = 0;
             for(var i = 0; i < _this.clickedTags.length; i++) {
                 for(var j = 0; j < tags.length; j++) {
-                    if(_this.clickedTags[i].toLowerCase() ==  tags[j].toLowerCase()){
-                        continue
-                    } else {
-                        break;
+                    if (_this.clickedTags[i].toLowerCase() == tags[j].toLowerCase()) {
+                        isMatchQty++;
                     }
                 }
-                isMatch = true;
             }
-            if(isMatch) {
+            if(_this.clickedTags.length == isMatchQty) {
                 return post;
             }
-
-
 
         });
 
