@@ -101,6 +101,10 @@ input {
     background: rgba(0,0,0,0.1);
 }
 
+.tags-container span.active {
+    background: rgba(0,0,0,1);
+}
+
 
 .tags span + span {
     margin-left: 10px;
