@@ -1,0 +1,16 @@
+input#user-id{
+	margin-left: 50px;
+}
+
+.user-container div{
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.user-name{
+	width: 100px;
+}
+
+#users-container{
+	margin-top: 30px;
+}
